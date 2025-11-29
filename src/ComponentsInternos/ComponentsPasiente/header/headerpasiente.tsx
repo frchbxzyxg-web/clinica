@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./headerpasiente.css";
+
 export default function HeaderPasiente() {
   return (
     <header className="header">
@@ -20,8 +21,8 @@ export default function HeaderPasiente() {
         <div className="header__dropdown">
           <button className="dropdown__btn">Servicios ▾</button>
           <div className="dropdown__menu">
-            <Link to="/servicio1">Consulta General</Link>
-            <Link to="/servicio3">Exámenes Médicos</Link>
+            <Link to="/servicio">Consulta General</Link>
+            <Link to="/crearcita">Exámenes Médicos</Link>
           </div>
         </div>
 
@@ -32,7 +33,7 @@ export default function HeaderPasiente() {
 
       {/* BOTÓN */}
       <Link to="/login" className="header__loginBtn">
-        Iniciar Sesión
+        Mi perfil 
       </Link>
     </header>
   );

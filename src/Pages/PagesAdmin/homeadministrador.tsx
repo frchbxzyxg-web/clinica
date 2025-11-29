@@ -1,12 +1,11 @@
 import React from "react";
 import "./homeadministrador.css"
-import HeaderAdministrador from "../../ComponentsInternos/ComponentsAdminstrador/header/headeradministradror";
+import LayoutAdministrador from "../../layoutInternos/LayoutAdministrador/layoutadministrador";
 
 export default function HomeAdministrador(){
     return(
 <div>
-    <HeaderAdministrador />
-    <div className= "container" style={{ marginTop: "120px" }}></div>
+    <LayoutAdministrador />
 </div>
     )
 }

@@ -1,12 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import HomeAdministrador from "../../Pages/PagesAdmin/homeadministrador";
-
+import HeaderAdministrador from "../../ComponentsInternos/ComponentsAdminstrador/header/headeradministradror";
+import "./layoutadministrador.css"
 export default function LayoutAdministrador(){
     return(
         <>
-        <Outlet />
-        <HomeAdministrador />
+       <HeaderAdministrador />
+       <div className= "container" style={{ marginTop: "120px" }}>
+
+ 
+    </div>
+    <Outlet />
         </>
     )
 }

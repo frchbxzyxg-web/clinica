@@ -1,14 +1,19 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import HomeSecretaria from "../../Pages/PagesSecretaria/homesecretaria";
-
+import "./layoutsecretaria.css"
+import HeaderSecretaria from "../../ComponentsInternos/ComponentsSecretaria/header/headersecretaria";
 
 export default function LayoutSecretria(){
     return(
         <>
-        <Outlet />
+      <HeaderSecretaria />
 
-        <HomeSecretaria />
+      <div className= "container" style={{ marginTop: "120px" }}>
+
+           
+        </div>
+<Outlet />
         </>
+        
     )
 }

@@ -1,12 +1,10 @@
 import React from "react";
 import "./homedoctor.css"
-import HeaderDoctor from "../../ComponentsInternos/ComponentsDoctor/header/headerdoctor";
+import LayoutDoctor from "../../layoutInternos/LayoutDoctor/layoutdoctor";
 export default function HomeDoctor(){
     return(
-        <div>
-            <HeaderDoctor />
-                <div className= "container" style={{ marginTop: "120px" }}></div>
-            
-        </div>
+     <>
+     <LayoutDoctor />
+     </>  
     )
 }

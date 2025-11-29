@@ -6,6 +6,7 @@ import Login from '../Pages/Login/login'
 import CrearUsuario from "../Pages/CrearUsuarioNuevo/CrearUsuario"
 import AcercaNosotros from "../Pages/Landing/acerca_nosotros"
 
+
 import LayoutSecretria from "../layoutInternos/LayoutSecretaria/layoutsecretaria";
 import LayoutAdministrador from "../layoutInternos/LayoutAdministrador/layoutadministrador";
 import LayoutDoctor from "../layoutInternos/LayoutDoctor/layoutdoctor";
@@ -16,10 +17,16 @@ import LayoutPasiente from "../layoutInternos/LayoutPasiente/layoutpasiente";
 /* importaciones de pasiente*/
 import HomePasiente from "../Pages/PagesPasiente/HomePasiente/homepasiente";
 
+import CrearCita from "../Pages/PagesPasiente/Crearcita/crearcita";
 
+/** importaciones de doctor */
 import HomeDoctor from "../Pages/PagesDoctor/homedoctor";
 
+
+/** importaciones de administrador */
 import HomeAdministrador from "../Pages/PagesAdmin/homeadministrador";
+
+/** importaciones de secretaria */
 import HomeSecretaria from "../Pages/PagesSecretaria/homesecretaria";
 
 export default function AppRouter() {
@@ -45,7 +52,10 @@ return(
 </Route>
 
 <Route element={<LayoutPasiente></LayoutPasiente>}>
+
 <Route path="/homepasiente" element={<HomePasiente></HomePasiente>}></Route>
+<Route path="/crearcita" element={<CrearCita></CrearCita>}></Route>
+
 </Route>
 
 <Route element={<LayoutDoctor></LayoutDoctor>}>

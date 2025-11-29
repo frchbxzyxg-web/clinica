@@ -1,12 +1,14 @@
 import React from "react";
-import HomeDoctor from "../../Pages/PagesDoctor/homedoctor";
-import { Outlet } from "react-router-dom";
+import HeaderDoctor from "../../ComponentsInternos/ComponentsDoctor/header/headerdoctor";
+import "./layoutdoctor.css"
 export default function LayoutDoctor(){
 return(
     <>
-    <HomeDoctor/>
-
-    <Outlet />
+   <div>
+            <HeaderDoctor />
+                <div className= "container" style={{ marginTop: "120px" }}></div>
+            
+        </div>
     </>
 )
 }

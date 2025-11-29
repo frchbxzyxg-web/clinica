@@ -1,11 +1,19 @@
 import React from "react";
-import HomePasiente from "../../Pages/PagesPasiente/HomePasiente/homepasiente";
 import { Outlet } from "react-router-dom";
+import HeaderPasiente from "../../ComponentsInternos/ComponentsPasiente/header/headerpasiente";
+import "./layoutpasiente.css"
+
 export default function LayoutPasiente (){
     return(
-<>
-<Outlet />
-<HomePasiente />
-</>
+<div>
+    <HeaderPasiente />
+        <div className= "container" style={{ marginTop: "120px" }}>
+
+           
+        </div>
+
+    <Outlet />
+</div>
+
     )
 }

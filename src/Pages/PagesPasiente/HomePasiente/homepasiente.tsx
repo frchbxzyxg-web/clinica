@@ -1,13 +1,13 @@
 import React from "react";
 
-import HeaderPasiente from "../../../ComponentsInternos/ComponentsPasiente/header/headerpasiente";
+import LayoutPasiente from "../../../layoutInternos/LayoutPasiente/layoutpasiente";
 
 export default function HomePasiente(){
     return(
-<div>
-    <HeaderPasiente />
-        <div className= "container" style={{ marginTop: "120px" }}></div>
-    
-</div>
+<>
+<LayoutPasiente/>
+
+
+</>
     );
 };
