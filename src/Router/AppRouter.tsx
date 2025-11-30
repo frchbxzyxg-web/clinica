@@ -3,10 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Landing from '../Pages/Landing/landing'
 import Login from '../Pages/Login/login'
-import CrearUsuario from "../Pages/CrearUsuarioNuevo/CrearUsuario"
+
 import AcercaNosotros from "../Pages/Landing/acerca_nosotros"
-
-
+import CrearUsuarioNuevoVistaPasiente from "../Pages/CrearUsuarioNuevo/crearusuarionuevovistapasiente";
 import LayoutSecretria from "../layoutInternos/LayoutSecretaria/layoutsecretaria";
 import LayoutAdministrador from "../layoutInternos/LayoutAdministrador/layoutadministrador";
 import LayoutDoctor from "../layoutInternos/LayoutDoctor/layoutdoctor";
@@ -48,7 +47,8 @@ return(
 <Route element={<AuthLayout></AuthLayout>}>
 
 <Route path="/login" element={<Login></Login> }></Route>
-<Route path="/crearusuario" element={<CrearUsuario></CrearUsuario>}></Route>
+<Route path="crearusuariopasientevista" element={<CrearUsuarioNuevoVistaPasiente></CrearUsuarioNuevoVistaPasiente>}></Route>
+
 </Route>
 
 <Route element={<LayoutPasiente></LayoutPasiente>}>

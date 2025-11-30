@@ -27,7 +27,7 @@ export default function Login() {
         {/* OPCIONES */}
         <div className="login__links">
           <Link to="/forgot">¿Olvidaste tu contraseña?</Link>
-          <Link to="/crearusuario">Crear una cuenta</Link>
+          <Link to="/crearusuariopasientevista">Crear una cuenta</Link>
         </div>
       </div>
 

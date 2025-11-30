@@ -1,0 +1,22 @@
+.form-field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.form-field label {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.form-field input,
+.form-field .rs-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form {
+  padding: 40px;
+}
