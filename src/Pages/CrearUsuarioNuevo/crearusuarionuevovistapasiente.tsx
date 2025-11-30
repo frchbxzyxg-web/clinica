@@ -27,8 +27,10 @@ const CrearUsuarioNuevoVistaPasiente = () => {
            name= 'name'
            labelText='tu nombre'
            placeholder= 'ingresa tu nombre'
+           
+
            />
-            
+           
            <FormController 
            name= 'lastname'
            labelText='apellodo'
