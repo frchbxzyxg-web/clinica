@@ -9,7 +9,7 @@ export default function Hero(){
                 Atención médica general <br />
                 para toda la familia. <br />
                 Programa tu cita con <br />
-                nosotros.
+                nosotr.
              </h1>
 
              <p className="hero_sub">

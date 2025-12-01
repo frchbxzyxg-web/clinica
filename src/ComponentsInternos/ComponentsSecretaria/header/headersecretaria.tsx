@@ -19,9 +19,9 @@ export default function HeaderSecretaria(){
               <nav className="header__nav">
                 <Link to="/homesecretaria/CrearNuevoPasienteVistaSecretaria">crear usuario nuevo</Link>
                 <div className="header__dropdown">
-                  <button className="dropdown__btn">Servicios ▾</button>
+                  <button className="dropdown__btn"> Pagos ▾</button>
                   <div className="dropdown__menu">
-                    <Link to="/servicio1">Consulta General</Link>
+                    <Link to="/homesecretaria/vistapagocita"> Nuevo pago</Link>
                     <Link to="/servicio3">Exámenes Médicos</Link>
                   </div>
                 </div>

@@ -17,6 +17,10 @@ import CrearUsuarioVistaAdministrador from "../Pages/PagesAdmin/CrearUsuarioVist
 
 import CrearNuevoPasienteVistaSecretaria from "../Pages/PagesSecretaria/CrearPasienteVistaSecretaria/crearcitapasientesecretaria";
 
+import VistaPagoModal from "../Pages/PagesSecretaria/pagoCita/vistamodalpago";
+
+import VistaPagoCita from "../Pages/PagesSecretaria/pagoCita/vistaPagocita";
+
 /* importaciones de pasiente*/
 import HomePasiente from "../Pages/PagesPasiente/HomePasiente/homepasiente";
 
@@ -78,6 +82,8 @@ return(
 <Route element={<LayoutSecretria></LayoutSecretria>}>
 
 <Route path="/homesecretaria" element={<HomeSecretaria></HomeSecretaria>}></Route>
+<Route path="/homesecretaria/vistapagocita" element={<VistaPagoCita></VistaPagoCita>}></Route>
+<Route path="/homesecretaria/vistapagocita/VistaPagoModal" element={<VistaPagoModal></VistaPagoModal>}></Route>
 <Route path="/homesecretaria/CrearNuevoPasienteVistaSecretaria" element={<CrearNuevoPasienteVistaSecretaria></CrearNuevoPasienteVistaSecretaria>} ></Route>
 
 </Route>
