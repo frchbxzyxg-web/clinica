@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const pacienteRegisterSchema  = z.object({
+export const SecretGuardaPacientSchema  = z.object({
   PrimerNombre: z.string().min(1, "El primer nombre es requerido"),
   SegundoNombre: z.string().optional().nullable(),
   Apellido: z.string().min(1, "El primer apellido es requerido"),
@@ -21,4 +21,4 @@ export const pacienteRegisterSchema  = z.object({
   path: ["confirmPassword"]
 });
 
-export type PacienteRegisterInput = z.infer<typeof pacienteRegisterSchema>;
+export type SecretGuardaPacienteInput = z.infer<typeof SecretGuardaPacientSchema>;
