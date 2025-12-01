@@ -15,6 +15,8 @@ import LayoutPasiente from "../layoutInternos/LayoutPasiente/layoutpasiente";
 
 import CrearUsuarioVistaAdministrador from "../Pages/PagesAdmin/CrearUsuarioVistaAdministrador/crearusuariovistaadministrador";
 
+import CrearNuevoPasienteVistaSecretaria from "../Pages/PagesSecretaria/CrearPasienteVistaSecretaria/crearcitapasientesecretaria";
+
 /* importaciones de pasiente*/
 import HomePasiente from "../Pages/PagesPasiente/HomePasiente/homepasiente";
 
@@ -76,6 +78,7 @@ return(
 <Route element={<LayoutSecretria></LayoutSecretria>}>
 
 <Route path="/homesecretaria" element={<HomeSecretaria></HomeSecretaria>}></Route>
+<Route path="/homesecretaria/CrearNuevoPasienteVistaSecretaria" element={<CrearNuevoPasienteVistaSecretaria></CrearNuevoPasienteVistaSecretaria>} ></Route>
 
 </Route>
 

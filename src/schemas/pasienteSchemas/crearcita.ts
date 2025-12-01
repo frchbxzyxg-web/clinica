@@ -3,8 +3,7 @@ import {z} from 'zod'
 export const CrearCitaPasiente = z.object({
     Motivo: z.string().min(1, 'el nombre es requerido').regex(/^[A-Za-zÁÉÍÓÚÑáéíóúñ ]+$/, 'no se permiten estos caracteres raros'),
     fechacita: z.date(),
-    horacita: z.string().regex(/^([01]\d|2[0-3]):([0-5]\d)$/, "Hora inválida"),
-
+    horacita: z.date()
 
    
 });
@@ -14,7 +13,7 @@ export type PasienteSchemasType = z.infer<typeof CrearCitaPasiente>
 export const defaultValues: PasienteSchemasType = {
 Motivo:'',
 fechacita: new Date(),
-horacita: ''
+horacita: new Date()
 
 
 

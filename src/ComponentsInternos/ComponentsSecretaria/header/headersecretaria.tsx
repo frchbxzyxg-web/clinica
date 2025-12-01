@@ -17,7 +17,7 @@ export default function HeaderSecretaria(){
         
               {/* MENÚ */}
               <nav className="header__nav">
-                <Link to="/about">Acerca de nosotros</Link>
+                <Link to="/homesecretaria/CrearNuevoPasienteVistaSecretaria">crear usuario nuevo</Link>
                 <div className="header__dropdown">
                   <button className="dropdown__btn">Servicios ▾</button>
                   <div className="dropdown__menu">

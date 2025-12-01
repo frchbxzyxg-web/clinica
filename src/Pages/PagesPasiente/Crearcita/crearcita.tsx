@@ -1,7 +1,7 @@
 import React from "react";
 import "./crearcita.css";
 import FormController from "../../../Components/formcontrolers/formcontrollers";
-import { CrearCitaPasiente, PasienteSchemasType, defaultValues } from "../../../schemas/pasienteSchemas/crearcita";
+import { CrearCitaPasiente,  defaultValues, PasienteSchemasType } from "../../../schemas/pasienteSchemas/crearcita";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, DatePicker, TimePicker } from "rsuite";
@@ -13,11 +13,13 @@ const methods = useForm<PasienteSchemasType>({
         defaultValues: defaultValues
     }); 
 
+
+
     return(
    <FormProvider {... methods} >
     <form>
       <FormController 
-           name= 'name'
+           name= 'Motivo'
            labelText='motivo de la cita'
            placeholder= ''
            
@@ -35,8 +37,11 @@ const methods = useForm<PasienteSchemasType>({
             as={TimePicker}
            name= 'horacita'
            labelText=' Hora cita'
-           placeholder= ''
            
+            disabledHours={() => {
+            const horasPermitidas = [9, 10, 11, 12, 13];
+            return Array.from({ length: 24 }, (_, h) => h).filter(h => !horasPermitidas.includes(h));
+             }}
            />
          
             

@@ -1,31 +1,20 @@
 import React from "react";
+import { CrearUsuarioVistaSecretaria, PasienteSchemasType, defaultValues } from "../../../schemas/secretariaSchemas/crearusuariopasientevistasecretaria/crearusuariovistasecretaria";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CrearNuevoPasiente, defaultValues, PasienteSchemasType } from "../../schemas/pasienteSchemas/CrearNuevoPasiente/crearNuevopasiente";
-import "./crearusuarionuevovistapasiente.css"
+import FormController from "../../../Components/formcontrolers/formcontrollers";
 import {  Button, DatePicker, SelectPicker } from "rsuite";
-import FormController from "../../Components/formcontrolers/formcontrollers";
-const CrearUsuarioNuevoVistaPasiente = () => {
-    
+const CrearNuevoPasienteVistaSecretaria = () =>{
     const methods = useForm<PasienteSchemasType>({
-        resolver: zodResolver(CrearNuevoPasiente),
-        defaultValues: defaultValues
-    }); 
-   const onsubmit = (data: PasienteSchemasType) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        console.log("form submit", data);
-        resolve(true);
-      }, 1000);
-    });
-  };
+            resolver: zodResolver(CrearUsuarioVistaSecretaria),
+            defaultValues: defaultValues
+        }); 
+    
     
     return(
-       <div className="modal-container">
-  <div className="modal-card">
 
-    <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onsubmit)} className="form-grid">
+    <FormProvider {... methods}>
+        <form  className="form-grid">
 
         {/* --- TUS CAMPOS (NO LOS TOCO) --- */}
 
@@ -78,7 +67,8 @@ const CrearUsuarioNuevoVistaPasiente = () => {
           labelText='Seleccione tu sexo'
         />
 
-      
+    
+
         <FormController 
           name='Telefono'
           labelText='Teléfono'
@@ -127,10 +117,8 @@ const CrearUsuarioNuevoVistaPasiente = () => {
 
       </form>
     </FormProvider>
+      
 
-  </div>
-</div>
     )
 }
-
-export default CrearUsuarioNuevoVistaPasiente;
+export default CrearNuevoPasienteVistaSecretaria
