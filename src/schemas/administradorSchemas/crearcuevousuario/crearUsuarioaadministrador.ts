@@ -1,6 +1,6 @@
 import {z} from 'zod'
 
-export const CrearNuevoPasiente = z.object({
+export const CrearNuevoUsuario = z.object({
    PrimerNombre: z
   .string()
   .min(1, "El primer nombre es obligatorio.")
@@ -22,36 +22,32 @@ sex: z
   .string()
   .min(1, "Debe seleccionar un género."),
 
-Altura: z
+
+
+  Roles: z
   .string()
-  .min(1, "La altura es obligatoria."),
+  .min(1, "escoge un roll")
+  .regex(/^[A-Za-zÁÉÍÓÚÑáéíóúñ ]+$/, "El segundo apellido solo puede contener letras."),
+
+  Especialidad: z
+  .string()
+  .min(1, "la especialidad")
+  .regex(/^[A-Za-zÁÉÍÓÚÑáéíóúñ ]+$/, "El segundo apellido solo puede contener letras."),
+
 
 fechaNacimiento: z.date("debe de ingresarse la fecha"),
 
-peso: z
-  .string()
-  .min(1, "El peso es obligatorio."),
+
 
 email: z
   .string()
   .email("Formato de correo electrónico inválido.")
   .min(1, "El correo electrónico es obligatorio."),
-
-TipoSangre: z
-  .string()
-  .min(1, "Debe seleccionar un tipo de sangre."),
+  
 
 Telefono: z
   .string()
   .min(1, "El número de teléfono es obligatorio."),
-
-  UsuarioPasiente: z
-  .string()
-  .min(1, "El usuario es obligatorio")
-  .regex(/^[A-Za-zÁÉÍÓÚÑáéíóúñ ]+$/, "El apellido solo puede contener letras."),
-
-
-
 
 password: z
   .string()
@@ -67,21 +63,19 @@ confirmPassword: z
     message: 'la contraseña no coincide'
 });
 
-export type PasienteSchemasType = z.infer<typeof CrearNuevoPasiente>
+export type UsuarioSchemasType = z.infer<typeof CrearNuevoUsuario>
 
-export const defaultValues: PasienteSchemasType = {
+export const defaultValues: UsuarioSchemasType = {
 PrimerNombre:'',
 SegundoNombre: '',
 Apellido:'',
 SegundoApellido: '',
-Altura: '',
-peso:'',
-TipoSangre: '',
+Especialidad: '',
 Telefono: '',
+Roles: '',
 sex:'',
 fechaNacimiento: new Date(),
 email: '',
-UsuarioPasiente: '',
 password: '',
 confirmPassword: ''
 

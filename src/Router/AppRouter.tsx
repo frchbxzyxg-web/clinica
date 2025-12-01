@@ -13,6 +13,8 @@ import PublicLayout from '../Layout/PublicLayout';
 import AuthLayout from '../Layout/AuthLayout';
 import LayoutPasiente from "../layoutInternos/LayoutPasiente/layoutpasiente";
 
+import CrearUsuarioVistaAdministrador from "../Pages/PagesAdmin/CrearUsuarioVistaAdministrador/crearusuariovistaadministrador";
+
 /* importaciones de pasiente*/
 import HomePasiente from "../Pages/PagesPasiente/HomePasiente/homepasiente";
 
@@ -47,7 +49,7 @@ return(
 <Route element={<AuthLayout></AuthLayout>}>
 
 <Route path="/login" element={<Login></Login> }></Route>
-<Route path="crearusuariopasientevista" element={<CrearUsuarioNuevoVistaPasiente></CrearUsuarioNuevoVistaPasiente>}></Route>
+<Route path="/crearusuariopasientevista" element={<CrearUsuarioNuevoVistaPasiente></CrearUsuarioNuevoVistaPasiente>}></Route>
 
 </Route>
 
@@ -67,6 +69,8 @@ return(
 <Route element={<LayoutAdministrador></LayoutAdministrador>}>
 
 <Route path="/homeadministrador" element={<HomeAdministrador></HomeAdministrador>}></Route>
+<Route path="/homeadministrador/CrearUsuarioVistaAdministrador" element={<CrearUsuarioVistaAdministrador></CrearUsuarioVistaAdministrador>}></Route>
+
 </Route>
 
 <Route element={<LayoutSecretria></LayoutSecretria>}>

@@ -11,13 +11,14 @@ export default function HeaderAdministrador(){
                   src="/imagenes/Regina-04(este_es) 2.png"
                   alt="Logo consultorio"
                   className="header__logo"
+                  
                 />
                 <span className="header__title">Consultorio Médico General</span>
               </div>
         
               {/* MENÚ */}
               <nav className="header__nav">
-                <Link to="/about">Acerca de nosotros</Link>
+                <Link to="/homeadministrador/CrearUsuarioVistaAdministrador">Agregar usuario nuevo</Link>
                 <div className="header__dropdown">
                   <button className="dropdown__btn">Servicios ▾</button>
                   <div className="dropdown__menu">
@@ -33,7 +34,7 @@ export default function HeaderAdministrador(){
         
               {/* BOTÓN */}
               <Link to="/login" className="header__loginBtn">
-                Mi perfil
+                Mi perfi
               </Link>
             </header>
     )

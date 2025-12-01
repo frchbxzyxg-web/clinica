@@ -8,9 +8,9 @@ export default function LayoutAdministrador(){
        <HeaderAdministrador />
        <div className= "container" style={{ marginTop: "120px" }}>
 
- 
+  
     </div>
-    <Outlet />
+   <Outlet />
         </>
     )
 }

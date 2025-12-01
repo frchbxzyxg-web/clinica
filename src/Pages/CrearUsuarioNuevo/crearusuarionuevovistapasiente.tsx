@@ -21,64 +21,111 @@ const CrearUsuarioNuevoVistaPasiente = () => {
   };
     
     return(
-          <FormProvider {... methods}>
-          <form onSubmit={methods.handleSubmit(onsubmit)}>
-           <FormController 
-           name= 'name'
-           labelText='tu nombre'
-           placeholder= 'ingresa tu nombre'
-           
+       <div className="modal-container">
+  <div className="modal-card">
 
-           />
-           
-           <FormController 
-           name= 'lastname'
-           labelText='apellodo'
-           placeholder= 'ingresa tu apellido'
-           />
-          <FormController 
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(onsubmit)} className="form-grid">
+
+        {/* --- TUS CAMPOS (NO LOS TOCO) --- */}
+
+        <FormController 
+          name='PrimerNombre'
+          labelText='Primer nombre'
+          placeholder='ingresa tu nombre'
+        />
+
+        <FormController 
+          name='SegundoNombre'
+          labelText='Segundo nombre'
+          placeholder=''
+        />
+
+        <FormController 
+          name='Apellido'
+          labelText='Primer apellido'
+          placeholder=''
+        />
+
+        <FormController 
+          name='SegundoApellido'
+          labelText='Segundo apellido'
+          placeholder=''
+        />
+
+        <FormController 
           as={DatePicker}
-          
-           name= 'fechaNacimiento'
-           labelText='Ingresa tu fecha de nacimiento'
-           placeholder= 'ingresa tu nombre'
-           
-           
-           />
-          <FormController 
+          name='fechaNacimiento'
+          labelText='Ingresa tu fecha de nacimiento'
+          placeholder='DD/MM/YYYY'
+        />
+
+        <FormController 
           as={SelectPicker}
           data={[
-            {label: 'Hombre', value: 'hombre' },
-            {label: 'Mujer', value: 'mujer' }
+            { label: "Hombre", value: "hombre"},
+            { label: "Mujer", value: "mujer"}
           ]}
-           name= 'sex'
-           labelText='seleccione tu sexo'
-           placeholder= 'seleccione tu sexo'
-           
-           
-           />
+          name='sex'
+          labelText='Seleccione tu sexo'
+        />
 
-           <FormController 
-           name= 'email'
-           labelText='email'
-           placeholder= 'david@gmail.com'
-           />
+        <FormController 
+          name='Edad'
+          labelText='Edad'
+        />
 
-              <FormController 
-           name= 'password'
-           labelText='contraseña'
-           placeholder= '.....'
-           />
+        <FormController 
+          name='Telefono'
+          labelText='Teléfono'
+        />
+
+        <FormController 
+          as={SelectPicker}
+          data={[
+            { label: "A+", value: "A+" },
+            { label: "A-", value: "A-" },
+            { label: "B+", value: "B+" },
+            { label: "B-", value: "B-" },
+            { label: "AB+", value: "AB+" },
+            { label: "AB-", value: "AB-" },
+            { label: "O+", value: "O+" },
+            { label: "O-", value: "O-" }
+          ]}
+          name='TipoSangre'
+          labelText='Seleccione el tipo de sangre'
+        />
+
+        <FormController 
+          name='email'
+          labelText='Email'
+        />
+
          <FormController 
-           name= 'confirmPassword'
-           labelText='confirmas contraseña'
-           placeholder= '.....'
-           />
-            <Button type="submit">sum</Button>
-        </form>
+          name='UsuarioPasiente'
+          labelText='Nombre de usuario'
+          placeholder='pepe04'
+        />
 
-       
-          </FormProvider>
+        <FormController 
+          name='password'
+          labelText='Contraseña'
+          placeholder='.....'
+        />
+
+        <FormController 
+          name='confirmPassword'
+          labelText='Confirmar contraseña'
+          placeholder='.....'
+        />
+
+        <Button className="submit-btn" type="submit">Agregar Paciente</Button>
+
+      </form>
+    </FormProvider>
+
+  </div>
+</div>
     )
 }
 

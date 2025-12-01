@@ -1,0 +1,133 @@
+/* === FONDO DEL MODAL === */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 31, 36, 0.55); /* Backdrop oscuro suave */
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  overflow: auto; /* Si hay muuucho contenido, solo scrolla dentro */
+}
+
+/* === TARJETA PRINCIPAL === */
+.modal-card {
+  width: 85%;
+  max-width: 1050px;
+  background: #ffffff;
+  padding: 45px 55px;
+  border-radius: 18px;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 3px 6px rgba(0, 0, 0, 0.07);
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+/* Animación suave */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === GRID DEL FORMULARIO === */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  gap: 28px 45px; /* espacio entre filas / columnas */
+}
+
+/* Inputs más elegantes */
+.form-grid input,
+.form-grid .rs-picker-toggle,
+.form-grid .rs-input,
+.form-grid .rs-input-group,
+.form-grid .rs-input-group input {
+  height: 44px !important;
+  border-radius: 10px !important;
+  border: 1.5px solid #e0e0e0 !important;
+  background: #fafafa !important;
+  padding-left: 12px !important;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.form-grid input:hover,
+.form-grid .rs-picker-toggle:hover {
+  border-color: #bfbfbf !important;
+}
+
+/* Focus */
+.form-grid input:focus,
+.form-grid .rs-picker-toggle.rs-picker-toggle-active {
+  border-color: #5c7cfa !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(92, 124, 250, 0.18);
+}
+
+/* Labels */
+.form-grid label,
+.rs-form-control-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px !important;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* === MENSAJES DE ERROR === */
+.rs-form-error-message,
+.rs-form-control-message,
+.Form_Error {
+  border: none !important;
+  background: none !important;
+  color: #d9534f !important;
+  font-size: 13px;
+  margin-top: 4px;
+  padding-left: 3px;
+}
+
+/* === BOTÓN PRINCIPAL === */
+.submit-btn {
+  grid-column: span 2; /* Botón ocupa todo el ancho */
+  margin-top: 25px;
+  height: 48px;
+  background: #3d7afe !important;
+  color: white !important;
+  border-radius: 10px !important;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background: #1c5bff !important;
+  box-shadow: 0 4px 12px rgba(61, 122, 254, 0.4);
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 850px) {
+  .modal-card {
+    width: 95%;
+    padding: 35px 25px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr; /* 1 sola columna */
+  }
+
+  .submit-btn {
+    grid-column: span 1;
+  }
+}

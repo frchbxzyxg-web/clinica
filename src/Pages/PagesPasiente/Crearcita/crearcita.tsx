@@ -34,11 +34,12 @@ const methods = useForm<PasienteSchemasType>({
             <FormController 
             as={TimePicker}
            name= 'horacita'
-           labelText=' fecha'
+           labelText=' Hora cita'
            placeholder= ''
            
            />
          
+            
            <Button type="submit">Crear cita</Button>
      </form>
 
