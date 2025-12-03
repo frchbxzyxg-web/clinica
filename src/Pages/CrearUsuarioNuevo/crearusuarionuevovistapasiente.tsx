@@ -6,60 +6,89 @@ import "./crearusuarionuevovistapasiente.css"
 import {  Button, DatePicker, SelectPicker } from "rsuite";
 import FormController from "../../Components/formcontrolers/formcontrollers";
 const CrearUsuarioNuevoVistaPasiente = () => {
-    
+   
     const methods = useForm<PasienteSchemasType>({
         resolver: zodResolver(CrearNuevoPasiente),
         defaultValues: defaultValues
-    }); 
-   const onsubmit = (data: PasienteSchemasType) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        console.log("form submit", data);
-        resolve(true);
-      }, 1000);
     });
+   const onsubmit = async (data: PasienteSchemasType) => {
+  console.log("Datos crudos del formulario:", data);
+ 
+  // Adaptar sex y fecha para el backend
+  const payload = {
+    ...data,
+    sex: data.sex === "hombre" ? "M" : data.sex === "mujer" ? "F" : null,
+    fechaNacimiento: data.fechaNacimiento
+      ? new Date(data.fechaNacimiento).toISOString()
+      : null,
   };
-    
+ 
+  try {
+    const response = await fetch("http://localhost:4000/api/patients", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+ 
+    const result = await response.json();
+    console.log("Respuesta del backend:", result);
+ 
+    if (!response.ok) {
+      alert(result.message ?? "Error al registrar paciente");
+      return;
+    }
+ 
+    alert("Paciente registrado correctamente");
+    } catch (error) {
+    console.error("Error al conectar con el backend:", error);
+    alert("No se pudo conectar con el servidor");
+    }
+  };
+ 
+   
     return(
        <div className="modal-container">
   <div className="modal-card">
-
+ 
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onsubmit)} className="form-grid">
-
+ 
         {/* --- TUS CAMPOS (NO LOS TOCO) --- */}
-
-        <FormController 
+ 
+        <FormController
           name='PrimerNombre'
           labelText='Primer nombre'
           placeholder='ingresa tu nombre'
         />
-
-        <FormController 
+ 
+        <FormController
           name='SegundoNombre'
           labelText='Segundo nombre'
           placeholder=''
         />
-
-        <FormController 
+ 
+        <FormController
           name='Apellido'
           labelText='Primer apellido'
           placeholder=''
         />
-
-        <FormController 
+ 
+        <FormController
           name='SegundoApellido'
           labelText='Segundo apellido'
           placeholder=''
         />
-
-        <FormController 
+ 
+        <FormController
           as={DatePicker}
           name='fechaNacimiento'
           labelText='Ingresa tu fecha de nacimiento'
           placeholder='DD/MM/YYYY'
         />
-         <FormController 
+ 
+        <FormController
           as={SelectPicker}
           data={[
             { label: "Hombre", value: "hombre"},
@@ -68,23 +97,18 @@ const CrearUsuarioNuevoVistaPasiente = () => {
           name='sex'
           labelText='Seleccione tu sexo'
         />
-        <FormController 
-          as={SelectPicker}
-          data={[
-            { label: "Hombre", value: "hombre"},
-            { label: "Mujer", value: "mujer"}
-          ]}
-          name='sex'
-          labelText='Seleccione tu sexo'
-        />
-
-      
-        <FormController 
+ 
+        {/* <FormController
+          name='Edad'
+          labelText='Edad'
+        /> */}
+ 
+        <FormController
           name='Telefono'
           labelText='Teléfono'
         />
-
-        <FormController 
+ 
+        <FormController
           as={SelectPicker}
           data={[
             { label: "A+", value: "A+" },
@@ -99,38 +123,39 @@ const CrearUsuarioNuevoVistaPasiente = () => {
           name='TipoSangre'
           labelText='Seleccione el tipo de sangre'
         />
-
-        <FormController 
+ 
+        <FormController
           name='email'
           labelText='Email'
         />
-
-         <FormController 
+ 
+         <FormController
           name='UsuarioPasiente'
           labelText='Nombre de usuario'
           placeholder='pepe04'
         />
-
-        <FormController 
+ 
+        <FormController
           name='password'
           labelText='Contraseña'
           placeholder='.....'
         />
-
-        <FormController 
+ 
+        <FormController
           name='confirmPassword'
           labelText='Confirmar contraseña'
           placeholder='.....'
         />
-
+ 
         <Button className="submit-btn" type="submit">Agregar Paciente</Button>
-
+ 
       </form>
     </FormProvider>
-
+ 
   </div>
 </div>
     )
 }
-
+ 
 export default CrearUsuarioNuevoVistaPasiente;
+ 

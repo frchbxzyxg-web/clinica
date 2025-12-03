@@ -1,16 +1,12 @@
-
-
-
-export interface PagosCita{
-    id_cita: number,
-    usuario: string,
-    fecha: Date,
-    horainicio: Date,
-    horafin: Date,
-    estado: boolean,
-    motivo: string,
-    id_doctor: number,
-    id_pasiente: number,
-    hora_llegada: Date
-
+export interface PagosCita {
+  id_cita: number;
+  usuario: string;
+  fecha: string;               // <- antes Date
+  horainicio: string | null;   // <- antes Date
+  horafin: string | null;      // <- antes Date
+  estado: string | null;       // <- antes boolean
+  motivo: string | null;
+  id_doctor: number | null;
+  id_pasiente: number | null;
+  hora_llegada: string | null; // <- antes Date
 }

@@ -19,10 +19,10 @@ export default function HeaderPasiente() {
       <nav className="header__nav">
         <Link to="/about">Acerca de nosotros</Link>
         <div className="header__dropdown">
-          <button className="dropdown__btn">Servicios ▾</button>
+          <button className="dropdown__btn">Citas ▾</button>
           <div className="dropdown__menu">
             <Link to="/servicio">Consulta General</Link>
-            <Link to="/crearcita">Exámenes Médicos</Link>
+            <Link to="/crearcita">Crear Citas</Link>
           </div>
         </div>
 
